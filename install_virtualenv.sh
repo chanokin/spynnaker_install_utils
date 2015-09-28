@@ -86,3 +86,11 @@ make
 
 cd ../../SpiNNMan/c_models/
 make
+
+cd ../../sPyNNaker/neural_modelling/
+NEURAL_MODELLING_DIRS=$PWD
+
+cd ../../virtualenv/bin
+echo "export NEURAL_MODELLING_DIRS=$NEURAL_MODELLING_DIRS" >> activate
+
+
