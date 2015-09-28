@@ -90,7 +90,11 @@ make
 cd ../../sPyNNaker/neural_modelling/
 NEURAL_MODELLING_DIRS=$PWD
 
-cd ../../virtualenv/bin
-echo "export NEURAL_MODELLING_DIRS=$NEURAL_MODELLING_DIRS" >> activate
+cd ../../spinnaker_tools
+SPINN_DIRS=$PWD
 
+cd ../virtualenv/bin
+echo -e "\nexport NEURAL_MODELLING_DIRS=$NEURAL_MODELLING_DIRS" >> activate
+echo -e "\nexport SPINN_DIRS=$SPINN_DIRS" >> activate
+echo -e "\nexport SPINN_VERSION=131" >> activate
 
