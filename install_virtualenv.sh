@@ -31,7 +31,7 @@ git clone -b $BRANCH https://github.com/SpiNNakerManchester/PyNNExamples.git
 # Setup virtualenv
 #---------------------------------------
 # Create virtualenv
-virtualenv virtualenv --system-site-packages
+virtualenv2 virtualenv --system-site-packages
 
 # Activate the virtualenv
 cd virtualenv

@@ -11,6 +11,10 @@ new_models = ["IZK_curr_exp_stdp_pair_additive",
               "IZK_curr_exp_stdp_nearest_pair_additive",
               "IZK_curr_exp_stdp_mad_pair_additive",
               "IZK_curr_exp_stdp_mad_nearest_pair_additive",
+              "IZK_curr_exp_stdp_pair_multiplicative",
+              "IZK_curr_exp_stdp_nearest_pair_multiplicative",
+              "IZK_curr_exp_stdp_mad_pair_multiplicative",
+              "IZK_curr_exp_stdp_mad_nearest_pair_multiplicative",
              ]
 
 base_dir = "sPyNNaker/neural_modelling/src/neuron/"
