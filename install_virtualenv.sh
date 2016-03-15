@@ -12,16 +12,17 @@ fi
 # Clone low-level tools
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/spinnaker_tools.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/spinn_common.git
-git clone -b $BRANCH https://github.com/SpiNNakerManchester/ybug
+git clone -b $BRANCH https://github.com/SpiNNakerManchester/ybug.git
 
 # Clone sPyNNaker and requirements
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/DataSpecification.git
-git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNMachine
+git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNMachine.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNMan.git
-git clone -b $BRANCH https://github.com/SpiNNakerManchester/PACMAN
+git clone -b $BRANCH https://github.com/SpiNNakerManchester/PACMAN.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/sPyNNaker.git
-
+git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
+git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
 # Clone extra modules
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git
@@ -57,6 +58,12 @@ cd ../SpiNNFrontEndCommon
 python setup.py develop --no-deps
 
 cd ../SpiNNFrontEndCommon
+python setup.py develop --no-deps
+
+cd ../SpiNNStorageHandlers
+python setup.py develop --no-deps
+
+cd ../SpiNNakerGraphFrontEnd
 python setup.py develop --no-deps
 
 cd ../sPyNNaker
