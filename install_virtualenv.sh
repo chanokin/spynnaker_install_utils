@@ -100,6 +100,9 @@ NEURAL_MODELLING_DIRS=$PWD
 cd ../../spinnaker_tools
 SPINN_DIRS=$PWD
 
+pip install rig
+pip install rig_c_sa
+
 cd ../virtualenv/bin
 echo -e "\nexport NEURAL_MODELLING_DIRS=$NEURAL_MODELLING_DIRS" >> activate
 echo -e "\nexport SPINN_DIRS=$SPINN_DIRS" >> activate
