@@ -32,7 +32,14 @@ git clone -b $BRANCH https://github.com/SpiNNakerManchester/PyNNExamples.git
 # Setup virtualenv
 #---------------------------------------
 # Create virtualenv
-virtualenv virtualenv --system-site-packages
+venv="/usr/bin/virtualenv2"
+if [ ! -e "$venv" ]
+then
+    venv="/usr/bin/virtualenv"
+fi
+
+$venv virtualenv --system-site-packages
+
 
 # Activate the virtualenv
 cd virtualenv
@@ -72,6 +79,10 @@ python setup.py develop --no-deps
 cd ../sPyNNakerExternalDevicesPlugin
 python setup.py develop --no-deps
 
+cd ../sPyNNakerExtraModelsPlugin
+python setup.py develop --no-deps
+
+
 #---------------------------------------
 # Build C
 #---------------------------------------
@@ -102,6 +113,7 @@ SPINN_DIRS=$PWD
 
 pip install rig
 pip install rig_c_sa
+pip install spalloc 
 
 cd ../virtualenv/bin
 echo -e "\nexport NEURAL_MODELLING_DIRS=$NEURAL_MODELLING_DIRS" >> activate
