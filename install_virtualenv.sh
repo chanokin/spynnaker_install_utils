@@ -28,6 +28,14 @@ git clone -b $BRANCH https://github.com/SpiNNakerManchester/sPyNNakerExtraModels
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/PyNNExamples.git
 
+
+# Clone rig
+git clone https://github.com/project-rig/rig
+git clone https://github.com/project-rig/rig_c_sa
+
+# Clone rig_cpp_common for connector builder
+git clone https://github.com/project-rig/rig_cpp_common
+
 #---------------------------------------
 # Setup virtualenv
 #---------------------------------------
@@ -82,6 +90,14 @@ python setup.py develop --no-deps
 cd ../sPyNNakerExtraModelsPlugin
 python setup.py develop --no-deps
 
+cd ../rig
+python setup.py develop
+
+cd ../rig_c_sa
+python setup.py develop
+
+cd ../rig_cpp_common 
+python setup.py develop 
 
 #---------------------------------------
 # Build C
@@ -106,17 +122,18 @@ cd ../../SpiNNMan/c_models/
 make
 
 cd ../../sPyNNaker/neural_modelling/
-NEURAL_MODELLING_DIRS=$PWD
+NEURAL_MODELLING_DIRS=`pwd`
 
 cd ../../spinnaker_tools
-SPINN_DIRS=$PWD
+SPINN_DIRS=`pwd`
 
-pip install rig
-pip install rig_c_sa
 pip install spalloc 
 
 cd ../virtualenv/bin
 echo -e "\nexport NEURAL_MODELLING_DIRS=$NEURAL_MODELLING_DIRS" >> activate
 echo -e "\nexport SPINN_DIRS=$SPINN_DIRS" >> activate
 echo -e "\nexport SPINN_VERSION=131" >> activate
+
+
+
 
