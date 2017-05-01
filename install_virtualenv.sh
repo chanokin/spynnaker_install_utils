@@ -15,6 +15,7 @@ git clone -b $BRANCH https://github.com/SpiNNakerManchester/spinn_common.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/ybug.git
 
 # Clone sPyNNaker and requirements
+git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNUtils.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/DataSpecification.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNMachine.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNMan.git
@@ -57,6 +58,10 @@ cd virtualenv
 # Install python modules
 #---------------------------------------
 # Install python modules
+
+cd ../SpiNNUtils
+python setup.py develop --no-deps
+
 cd ../DataSpecification
 python setup.py develop --no-deps
 
@@ -133,7 +138,6 @@ cd ../virtualenv/bin
 echo -e "\nexport NEURAL_MODELLING_DIRS=$NEURAL_MODELLING_DIRS" >> activate
 echo -e "\nexport SPINN_DIRS=$SPINN_DIRS" >> activate
 echo -e "\nexport SPINN_VERSION=131" >> activate
-
-
+echo -e "\nexport PATH=$PATH:$SPINN_DIRS/tools" >> activate
 
 
