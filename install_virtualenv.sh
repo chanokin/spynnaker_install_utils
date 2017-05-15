@@ -23,6 +23,8 @@ git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/sPyNNaker.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
+git clone -b $BRANCH https://github.com/SpiNNakerManchester/SpiNNUtils.git
+
 # Clone extra modules
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
 git clone -b $BRANCH https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git
@@ -79,6 +81,9 @@ cd ../SpiNNStorageHandlers
 python setup.py develop --no-deps
 
 cd ../SpiNNakerGraphFrontEnd
+python setup.py develop --no-deps
+
+cd ../SpiNNUtils
 python setup.py develop --no-deps
 
 cd ../sPyNNaker
